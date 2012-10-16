@@ -8,13 +8,13 @@ var LOG = require('./log.pc.js');
 
 var cwd = process.cwd();
 var PATH_BASE = cwd;
-var HOST_PORT = 9000;
+var HOST_PORT = 9001;
 var SUMERU_APP_PATH = "/data/data/com.baidu.sumeru/apps/";
 var MANIFEST_FILE = "SumeruManifest.xml";
 var ICON_FILE = "icon.png";
 
 server = http.createServer(function(request, response) {
-	
+	LOG.d("load http server");	
 	loadServer(request, response);
 	
 });
@@ -32,15 +32,18 @@ server.listen(HOST_PORT, function()
 function loadServer(request, response) 
 {
 	if(request.method != 'POST') {
+		LOG.d("not http post request");
 		return;
 	}
 
 	var postData = '';
+	LOG.d("postData init");
 
 	request.setEncoding('utf8');
 
 	request.addListener('data', function(chunk) {
 		postData += chunk;
+		Log.d("chunk:%s", chunk);
 	});
 		   
 	request.addListener('end', function(){
@@ -54,4 +57,5 @@ function loadServer(request, response)
 }
 
 function saveDataToFile(postData) {
+	Log.d("postData:%s", postData);
 }
