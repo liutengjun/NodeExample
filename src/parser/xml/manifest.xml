@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+    <app appName="string"
+        versionCode="integer"
+        versionName="string" />
+
+    <uses-runtimeserver
+        minVersion="integer" 
+        preferredVersion="integer" />
+
+    <uses-permission name="string" />    
+
+    <permission description="string"
+        label="string resource"
+        name="string"
+        permissionGroup="string"
+        protectionLevel="normal" />
+
+    <permission-group description="string"
+        label="string resource"
+        name="string" />
+
+    <service name="path1+name1"/>
+    <service name="path2+name2"/>
+</manifest>

@@ -12,8 +12,8 @@ exports.HashMap = function()
     var MapItem=function (key,value)
     {
         
-        this.key=(key==null?"":key);        
-        this.value=(value==null?"":value);        
+        this.key=(key===null?"":key);        
+        this.value=(value===null?"":value);        
         
         this.getKey=function (){
             return this.key;            
@@ -35,7 +35,7 @@ exports.HashMap = function()
     this.put=function (key,value)
     {
         var item=new MapItem();        
-        if(isItemExist(key)==false)
+        if(isItemExist(key)===false)
         {
             item.setKey(key);            
             item.setValue(value);            
@@ -59,7 +59,7 @@ exports.HashMap = function()
             {
                 for (var j=0;j<itemCollection.length ;j++ )
                 {
-                    if (MapItem.prototype.isPrototypeOf(itemCollection[j])==false)
+                    if (MapItem.prototype.isPrototypeOf(itemCollection[j])===false)
                     {
                         return false;
                     }
@@ -74,7 +74,7 @@ exports.HashMap = function()
 
     var connectMap=function (itemsArray)
     {
-        if (ItemCollection.length==0)
+        if (ItemCollection.length===0)
         {
             for (var i=0;i<itemsArray.length;i++)
             {
@@ -97,7 +97,7 @@ exports.HashMap = function()
         
         for(var i=0;i<ItemCollection.length;i++)
         {
-            if(ItemCollection[i].getKey()==key)
+            if(ItemCollection[i].getKey()===key)
             {
                 item=ItemCollection[i];                
                 break;                
@@ -137,7 +137,7 @@ exports.HashMap = function()
         
         for(var i=0;i<ItemCollection.length;i++)
         {
-            if(ItemCollection[i].getKey()==key)
+            if(ItemCollection[i].getKey()===key)
             {
                 value=ItemCollection[i].getValue();                
                 break;                
@@ -153,7 +153,7 @@ exports.HashMap = function()
         for(var i=0;i<ItemCollection.length;i++)
         {
             
-            if(ItemCollection[i].getKey()==key)
+            if(ItemCollection[i].getKey()===key)
             {
                 flag=true;                
                 break;    
@@ -168,7 +168,7 @@ exports.HashMap = function()
     {
         for (var i=0;i<ItemCollection.length;i++)
         {            
-            if (ItemCollection[i].getKey()==key)
+            if (ItemCollection[i].getKey()===key)
             {
                 for (var j=i;j<ItemCollection.length ;j++ )
                 {
@@ -194,7 +194,7 @@ exports.HashMap = function()
     {
         for (var i=0;i<ItemCollection.length ;i++ )
         {
-            if (ItemCollection[i].getKey()==key)
+            if (ItemCollection[i].getKey()===key)
             {
                 return true;
             }
